@@ -1,42 +1,48 @@
+// Creating Operations constructor 
 function Operations(operand1, operand2) {
-    this.operand1 = operand1;
-    this.operand2 = operand2;
-    var privateVariable = 'abcd123456'; // private variable
+    this.operand1 = operand1;       // declare public variable
+    this.operand2 = operand2;      // declare other public variable
 
+    // creating addition function
     this.addition = function() {
-        var addResult = this.operand1 + this.operand2;
-        console.log("Result of addition is: ", addResult);
-        alert("Result of addition is: " + addResult);
+        // creating private variable privateAddResult and assigning it the result of addition
+        var privateAddResult = this.operand1 + this.operand2;
+        console.log("Result of addition is: ", privateAddResult);
+        alert("Result of addition is: " + privateAddResult);
     };
+    // creating substraction function
     this.substraction = function() {
-        var subsResult = Math.abs(this.operand1 - this.operand2);
-        console.log("Result of substraction is: ", subsResult);
-        alert("Result of substraction is: " + subsResult);
+        // creating private variable privateSubResult and assigning it the result of substraction
+        var privateSubResult = Math.abs(this.operand1 - this.operand2);
+        console.log("Result of substraction is: ", privateSubResult);
+        alert("Result of substraction is: " + privateSubResult);
     };
+    // creating multiplication function
     this.multiplication = function() {
-        var mulResult = this.operand1 * this.operand2;
-        console.log("Result of multiplication is: ", mulResult);
-        alert("Result of multiplication is: " + mulResult);
+        // creating private variable privateMulResult and assigning it the result of multiplication
+        var privateMulResult = this.operand1 * this.operand2;
+        console.log("Result of multiplication is: ", privateMulResult);
+        alert("Result of multiplication is: " + privateMulResult);
     };
+    // creating division function
     this.division = function() {
-        var divResult;
+        // creating private variable privateDivResult and assigning it the result of division
+        var privateDivResult;
         if (this.operand1 > this.operand2) {
-            divResult = this.operand1 / this.operand2;
+            privateDivResult = this.operand1 / this.operand2;
         } else {
-            divResult = this.operand2 / this.operand1;
+            privateDivResult = this.operand2 / this.operand1;
         }
-        console.log("Result of division is: ", divResult);
-        alert("Result of division is: " + divResult);
-    };
-    this.displayPrivateVariable = function() {
-        console.log("Private variable is :", privateVariable);
-        alert("Private variable is :" + privateVariable);
+        console.log("Result of division is: ", privateDivResult);
+        alert("Result of division is: " + privateDivResult);
     };
 }
 
+// creating object
 var operationsObj = new Operations(5, 2);
+
+// calling properties
 operationsObj.addition();
 operationsObj.substraction();
 operationsObj.multiplication();
 operationsObj.division();
-operationsObj.displayPrivateVariable();
